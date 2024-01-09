@@ -6,18 +6,18 @@ if __name__ = "__main__":
     b_cast =int(sys.argv[3])
     s = sys.argv[2]
 
-    if len(sys.argv) > 3:
+    if len(sys.argv) - 1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit 1
+        sys.exit 1
     else:
         if s == '+':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, add(a_cast, b_cast))")
+            print("{:d} '+' {:d} = {:d}.format(a_cast, b_cast, add(a_cast, b_cast))")
         elif s == '_':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, sub(a_cast, b_cast))")
+            print("{:d} '_' {:d} = {:d}.format(a_cast, , b_cast, sub(a_cast, b_cast))")
         elif s == '*':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, mul(a_cast, b_cast))")
+            print("{:d} '*' {:d} = {:d}.format(a_cast, b_cast, mul(a_cast, b_cast))")
         elif s == '/':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, div(a_cast, b_cast))")
+            print("{:d} '/' {:d} = {:d}.format(a_cast, b_cast, div(a_cast, b_cast))")
         else:
              print("Unknown operator. Available operators: +, -, * and /")
-            exit(1)
+            sys.exit 1
