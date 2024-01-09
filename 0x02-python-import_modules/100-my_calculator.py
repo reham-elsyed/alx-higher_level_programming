@@ -12,10 +12,10 @@ if __name__ = "__main__":
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
         if s == '+':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, add(a, b))")
+            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, add(a_cast, b_cast))")
         elif s == '_':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, sub(a, b))")
+            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, sub(a_cast, b_cast))")
         elif s == '*':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, mul(a, b))")
+            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, mul(a_cast, b_cast))")
         elif s == '/':
-            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, div(a, b))")
+            print("{:d} {} {:d} = {:d}.format(a_cast, s.operator, b_cast, div(a_cast, b_cast))")
