@@ -5,5 +5,5 @@ def uniq_add(my_list=[]):
     new_list.sort()
     sum = 0
     for i in range(len(new_list) + 1):
-        sum += 1
+        sum += i
     return sum
