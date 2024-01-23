@@ -5,7 +5,14 @@ class Square:
 
     def __init__(self, size=0):
         """
-        Constri=uctor.
+        Constructor.
+
+        Args:
+            size: length.
+
+        Raises:
+            TypeError: if not intger
+            ValueError: if size is less than 0
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
