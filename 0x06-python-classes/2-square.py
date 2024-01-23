@@ -7,13 +7,8 @@ class Square:
         """
         Constri=uctor.
         """
-        self.size = size
-
-    @size.setter
-    def size(self, value):
-        if value.isdigit():
-            self.__size = value
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        else:
-            if value < 0:
+        if size < 0:
             raise TypeError("size must be >= 0")
+        self.__size = size
