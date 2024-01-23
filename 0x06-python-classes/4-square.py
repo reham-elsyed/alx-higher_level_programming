@@ -35,6 +35,6 @@ class Square:
         Area of this square.
 
         Returns:
-        the square of size.
+            The square of size.
         """
         return self.__size ** 2
