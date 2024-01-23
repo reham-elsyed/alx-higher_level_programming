@@ -5,7 +5,7 @@
 class Square:
     """Define a square"""
 
-    def _init__(self, size):
+    def __init__(self, size):
         """Constructor.
         Args:
         size: length.
