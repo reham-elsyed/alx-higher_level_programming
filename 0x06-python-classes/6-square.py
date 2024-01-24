@@ -60,8 +60,7 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Prints of this squar.
-        """
+        """Prints of this squar."""
         if self.__size == 0:
             print("")
             return
@@ -69,4 +68,4 @@ class Square:
         for m in range(0, self.__size):
             [print(" ", end="") for j in range(0, self.__position[0])]
             [print("#", end="") for k in range(0, self.__size)]
-        print()
+            print()
