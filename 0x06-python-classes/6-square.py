@@ -16,7 +16,8 @@ class Square:
 
     @property
     def size(self):
-        """Property for length.
+        """
+        Property for length.
 
         Raise:
             TypeError: if sizr not ingtger.
@@ -33,12 +34,13 @@ class Square:
         self.__size = value
 
     @property
-    """Property for length.
-
-        Raise:
-            TypeError: if sizr not ingtger.
-        """
     def position(self):
+        """
+        Property for length.
+
+            Raise:
+                TypeError: if sizr not ingtger.
+        """
         return self.__position
 
     @position.setter
