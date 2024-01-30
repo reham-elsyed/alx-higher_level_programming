@@ -2,6 +2,8 @@
 """
 Define class
 """
+
+
 class Rectangle:
     """Define rectangle """
     def __init__(self, width=0, height=0):
@@ -18,7 +20,7 @@ class Rectangle:
     def width(self):
         """getter for width"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """setter for width value"""
@@ -38,6 +40,6 @@ class Rectangle:
         """setter for heigth value"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
