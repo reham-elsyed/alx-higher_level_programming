@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""Define method file_writing"""
+
+
 def write_file(filename="", text=""):
-    with open(filename, 'w+', encoding="UTF8") as file:
-       file.write(text)
-    return len(text)
+    """Write a string
+    Args:
+        filename:stingb
+        text: the text
+    Return:
+        number of charachters .
+    """
+    with open(filename, 'w', encoding="UTF-8") as f:
+       return f.write(text)
