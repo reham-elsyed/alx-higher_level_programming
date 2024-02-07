@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Define fnction for serialization"""
-import json
 
 
 def class_to_json(obj):
