@@ -1,4 +1,4 @@
-#!/use/bin/python3
+#!/usr/bin/python3
 """Add all args in a python list and save them"""
 import sys
 
@@ -11,8 +11,8 @@ arg_data = sys.argv[1:]
 
 try:
     data = load_from_json_file('add_item.json')
-except FileNoteFoundError:
+except FileNotFoundError:
     data = []
 
-    data.extend(data_arg)
-    save_to_json_file(data, 'add_item.json')
+data.extend(arg_data)
+save_to_json_file(data, 'add_item.json')
