@@ -2,6 +2,7 @@
 """Function to create an object"""
 import json
 
+
 def load_from_json_file(filename):
     """Function to return
 
@@ -9,5 +10,5 @@ def load_from_json_file(filename):
         filename: file name.
     """
     with open(filename, 'r') as f:
-       obj = f.read()
-       return json.loads(obj)
+        obj = f.read()
+        return json.loads(obj)
