@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Function to create an object"""
-
+import json
 
 def load_from_json_file(filename):
     """Function to return
