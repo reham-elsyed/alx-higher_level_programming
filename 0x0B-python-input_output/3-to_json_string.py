@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Define method to stringfy json"""
-
+import json
 
 def to_json_string(my_obj):
     """Function to string json
@@ -11,4 +11,4 @@ def to_json_string(my_obj):
     Return:
         json rep of object
     """
-    return json(my_obj)
+    return json.dumps(my_obj)
