@@ -69,3 +69,11 @@ class Rectangle(Base):
             raise ValueError("y must be > 0")
         else:
             self.__y = value
+
+    def area(self):
+        """Method to cal area"""
+        return self.__width * self.__height
+
+    def display(self):
+        for i in range(self.__height):
+            print("#" * self.__width)
