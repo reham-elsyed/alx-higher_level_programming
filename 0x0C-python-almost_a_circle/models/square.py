@@ -2,6 +2,7 @@
 """Define class"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Class square"""
 
@@ -36,6 +37,6 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Update methof=d for args kwargs"""
         if args:
-                self.__update(*args)
+            self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
