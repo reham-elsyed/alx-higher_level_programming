@@ -15,8 +15,8 @@ class Rectangle(Base):
         self.y = y
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
-                - {self.width}/{self.height}"
+        return "[Rectangle] ({}) {}/{} - {}/{}".\
+            format(self.id, self.x, self.y, self.width, self.height)
 
     @property
     def width(self):
@@ -88,15 +88,15 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Update arg to attr"""
         if args:
-            if args >= 1:
+            if len(args) >= 1:
                 setattr(self, "id", args[0])
-            elif args >= 2:
+            elif len(args) >= 2:
                 setattr(self, "width", args[1])
-            elif args >= 3:
+            elif len(args) >= 3:
                 setattr(self, "height", args[2])
-            elif args >= 4:
+            elif len(args) >= 4:
                 setattr(self, "x", args[3])
-            elif args >= 5:
+            elif len(args) >= 5:
                 setattr(self, "y", args[4])
         elif kwargs:
             for key, value in kwargs.items():
