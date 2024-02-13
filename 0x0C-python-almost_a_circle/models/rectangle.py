@@ -107,6 +107,6 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """Return dictionary
-        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}"""
-        return vars(self)
+        """Return dictionary"""
+        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
+
