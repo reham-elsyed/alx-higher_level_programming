@@ -78,6 +78,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """Method ti display # rep"""
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -85,6 +86,7 @@ class Rectangle(Base):
 
 
     def update(self, *args, **kwargs):
+        """Update arg to attr"""
         if args:
             for arg in args:
                 setattr(self, arg[0], arg[1])
