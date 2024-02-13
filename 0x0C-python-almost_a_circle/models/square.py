@@ -9,7 +9,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return f"[square] (self.id) {self.x}/{self.y} - {self.width}"
+        return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
@@ -20,10 +20,18 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def __update(self, id=None, size=None, x=None, y=None):
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
     def update(self, *args, **kwargs):
         if args:
-            for arg in args:
-                    setattr(self, arg[0], arg[1])
+                self.__update(*args)
         elif kwargs:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            self.__update(**kwargs)
