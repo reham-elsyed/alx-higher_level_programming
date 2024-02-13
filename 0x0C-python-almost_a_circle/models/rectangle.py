@@ -89,15 +89,15 @@ class Rectangle(Base):
         """Update arg to attr"""
         if args:
             if args >= 1:
-                setattr(self, "width", args[0])
+                setattr(self, "id", args[0])
             elif args >= 2:
-                setattr(self, "height", args[1])
+                setattr(self, "width", args[1])
             elif args >= 3:
-                setattr(self, "x", args[2])
+                setattr(self, "height", args[2])
             elif args >= 4:
-                setattr(self, "y", args[3])
+                setattr(self, "x", args[3])
             elif args >= 5:
-                setattr(self, "id", args[4])
+                setattr(self, "y", args[4])
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
