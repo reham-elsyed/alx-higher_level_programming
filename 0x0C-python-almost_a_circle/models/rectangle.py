@@ -14,6 +14,10 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".\
+            format(self.id, self.x, self.y, self.width, self.height)
+
     @property
     def width(self):
         """Width getter"""
@@ -52,7 +56,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         else:
             self.__x = value
 
@@ -66,7 +70,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         else:
             self.__y = value
 
@@ -75,8 +79,39 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """Method ti display # rep"""
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
-    def my_str(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """Update args"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """Update args and kwargs"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return dictionary"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+                }
