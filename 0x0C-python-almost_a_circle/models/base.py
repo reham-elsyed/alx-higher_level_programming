@@ -44,4 +44,15 @@ class Base:
         else:
             my_list = json.loads(json_string)
             return my_list
-        
+    
+    @classmethod
+    def create(cls, **dictionary):
+        """Return a class instantiation of dict attr"""
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+        new.update(**dictionary)
+        return new
+
