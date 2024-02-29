@@ -72,12 +72,12 @@ class Base:
         """Serialize list of instances into csv format"""
         file_name = str(cls.__name__) + ".csv"
         with open(file_name, "w") as f:
-                if list_objs is None:
-                    f.write([])
-                else:
-                    list_objc = [c.to_dictionary() for c in list_objs]
-                    f.write(Base.to_json_string(list_objc))
-    
+            if list_objs is None:
+                f.write([])
+            else:
+                list_objc = [c.to_dictionary() for c in list_objs]
+                f.write(Base.to_json_string(list_objc))
+
     @classmethod
     def load_from_file_csv(cls):
         """return list of instances"""
@@ -88,4 +88,3 @@ class Base:
             return [cls.create(**d) for d in my_csv_inst]
         except IOError:
             return []
-        
