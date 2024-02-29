@@ -44,7 +44,7 @@ class Base:
         else:
             my_list = json.loads(json_string)
             return my_list
-    
+
     @classmethod
     def create(cls, **dictionary):
         """Return a class instantiation of dict attr"""
@@ -66,3 +66,26 @@ class Base:
             return [cls.create(**d) for d in my_inst_list]
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize list of instances into csv format"""
+        file_name = str(cls.__name__) + ".csv"
+        with open(file_name, "w") as f:
+                if list_objs is None:
+                    f.write([])
+                else:
+                    list_objc = [c.to_dictionary() for c in list_objs]
+                    f.write(Base.to_json_string(list_objc))
+    
+    @classmethod
+    def load_from_file_csv(cls):
+        """return list of instances"""
+        filename = str(cls.__name__) + ".csv"
+        try:
+            with open(filename, "r") as f:
+                my_csv_inst = Base.from_json_string(f.read())
+            return [cls.create(**d) for d in my_csv_inst]
+        except IOError:
+            return []
+        
