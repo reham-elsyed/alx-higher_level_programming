@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Define class"""
 import json
+import turtle
+import time
+from random import randrange
 
 
 class Base:
@@ -88,3 +91,31 @@ class Base:
             return [cls.create(**d) for d in my_csv_inst]
         except IOError:
             return []
+
+    @staticmethod
+    def draw_rectangle(rect):
+        screen = turtle.Screen().colormode(255)
+        screen.setup(width=800, height=600)
+        rect_turtle = turtle.Turtle()
+        rect_turtle.penup()
+        rect_turtle.goto(rect.x, rect.y)
+        rect_turtle.pendown()
+
+        for _ in range(2):
+            rect_turtle.forward(rect.width)
+            rect_turtle.right(90)
+            rect_turtle.forward(rect.width)
+            rect_turtle.right(90)
+        rect_turtle.hideturtle()
+        turtle.done()
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        if list_rectangles is not None:
+            for rect in list_rectangles:
+                if rect is not None:
+                    Base.draw_rectangle(rect)
+        if list_squares is not None:
+            for square in list_squares:
+                if square is not None:
+                   Base.draw_rectangle(square)
