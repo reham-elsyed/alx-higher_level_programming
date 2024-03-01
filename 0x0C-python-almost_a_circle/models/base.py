@@ -94,8 +94,6 @@ class Base:
 
     @staticmethod
     def draw_rectangle(rect):
-        screen = turtle.Screen().colormode(255)
-        screen.setup(width=800, height=600)
         rect_turtle = turtle.Turtle()
         rect_turtle.penup()
         rect_turtle.goto(rect.x, rect.y)
@@ -107,7 +105,6 @@ class Base:
             rect_turtle.forward(rect.width)
             rect_turtle.right(90)
         rect_turtle.hideturtle()
-        turtle.done()
 
     @staticmethod
     def draw(list_rectangles, list_squares):
