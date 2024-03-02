@@ -12,8 +12,8 @@ def pascal_triangle(n):
     """
 
     mylist = []
-    if numrows <= 0:
-        print(mylist)
+    if n <= 0:
+        return (mylist)
     else:
         for row in range(n):
             new_row = []
@@ -27,3 +27,4 @@ def pascal_triangle(n):
                         val = mylist[row - 1][col - 1] + mylist[row - 1][col]
                         new_row.append(val)
             mylist.append(new_row)
+    return (mylist)
