@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """
 Method to checlinstance of a class that inherited (directly or indirectly)
 """
