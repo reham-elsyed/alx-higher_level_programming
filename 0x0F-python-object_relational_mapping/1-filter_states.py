@@ -2,7 +2,6 @@
 """Module that list all states with n letter"""
 import sys
 import MySQLdb
-import mysql.connector
 
 
 if __name__ == "__main__":
