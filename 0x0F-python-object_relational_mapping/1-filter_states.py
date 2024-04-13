@@ -5,13 +5,22 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    #Get MYSQL credentials frkm command line arguments
+    # Get MYSQL credentials frkm command line arguments
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    db = MySQLdb.connect(
+        host="localhost",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
+    )
     c = db.cursor()
 
     # Execute the SQL query to retreive all states by id
-    c.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id")
+    c.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' "
+        "ORDER BY states.id"
+    )
     rows = c.fetchall()
     for row in rows:
         print(row)
