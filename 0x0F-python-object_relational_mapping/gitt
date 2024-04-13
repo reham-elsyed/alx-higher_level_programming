@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if a commit message was provided
+if [ -z "$1" ]; then
+	echo "Please provide commit message."
+	exit 1
+fi
+
+# Use the first argument as the commit message
+var="$1"
+
+# Add all changes to the staging ares
+git add .
+
+# Commit the changes with the provided message
+git commit -m "$var"
+
+# Push the changes to the remote repository
+git push
