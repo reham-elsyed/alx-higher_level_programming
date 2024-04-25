@@ -1,3 +1,3 @@
-#!usr/bin/bash
-# sriptsend request to url
-curl -sI "$1" | grep "Content-length:" | cut -d' ' -f2
+#!/bin/bash
+# sends request to URL and displays the size of the body of the response
+curl -sI "$1" | grep "Content-Length:" | cut -d' ' -f2
