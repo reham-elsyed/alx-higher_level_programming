@@ -9,7 +9,9 @@ def find_peak(list_of_integers):
     else:
         peak = 0
         for i, num in enumerate(list_of_integers):
-            peak  = num
-            if i < len(list_of_integers) - 1 and num > list_of_integers[i + 1] and num > list_of_integers[i - 1]:
+            peak = num
+            if i < len(list_of_integers) - 1 and
+            num > list_of_integers[i + 1] and
+            num > list_of_integers[i - 1]:
                 return num
         return peak
