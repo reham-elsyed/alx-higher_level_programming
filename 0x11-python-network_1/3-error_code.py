@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script that takes in a URL, sends a request to the URL and displays"""
+"""Script that takes in a URL, sends a request to the URL and displays"""
 
 
 if __name__ == "__main__":
